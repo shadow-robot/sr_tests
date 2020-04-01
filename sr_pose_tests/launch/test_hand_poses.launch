@@ -1,0 +1,8 @@
+<launch>
+    <arg name="hand_type" default="hand_e"/>
+    <arg name="biotac" default="false"/>
+    <node name="test_hand_poses" pkg="sr_pose_tests" type="test_hand_poses.py" output="screen">
+        <param name='hand_type' value="$(arg hand_type)" />
+        <param name='biotac' value="$(arg biotac)" />
+    </node>
+</launch>
