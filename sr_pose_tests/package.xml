@@ -8,6 +8,5 @@
   <license>GPLv2</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <exec_depend>sr_run_trajectories</exec_depend>
 
 </package>
