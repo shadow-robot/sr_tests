@@ -20,7 +20,7 @@ from sr_run_trajectories.run_trajectories import SrRunTrajectories
 
 if __name__ == "__main__":
     rospy.init_node('run_hand_poses')
-    trajectories_file_path = rospkg.RosPack().get_path('sr_pose_tests') + '/config/tested_hand_poses.yaml'
+    trajectories_file_path = rospkg.RosPack().get_path('sr_pose_tests') + '/config/hand_poses_to_test.yaml'
     srt = SrRunTrajectories(trajectories_file_path, arm=False)
     for pose in srt._hand_trajectories:
 	if 'open' == pose:
