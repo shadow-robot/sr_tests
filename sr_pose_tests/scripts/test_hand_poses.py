@@ -35,8 +35,8 @@ if __name__ == "__main__":
     srt = SrRunTrajectories(trajectories_file_path, arm=False)
 
     for pose in srt._hand_trajectories:
-	if 'open' == pose:
-	    continue
+        if 'open' == pose:
+            continue
         raw_input("About to go to pose {}. Press [RETURN] to execute...".format(pose))
         srt.run_trajectory('hand', pose)
         raw_input("Press [RETURN] to go back to open pose")
