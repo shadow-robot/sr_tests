@@ -1,4 +1,4 @@
-#!/usr/bin/env python 3
+#!/usr/bin/env python3
 #
 # Copyright 2020 Shadow Robot Company Ltd.
 #
@@ -14,9 +14,12 @@
 # You should have received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import absolute_import
+from builtin import input
 import rospy
 import rospkg
 from sr_run_trajectories.run_trajectories import SrRunTrajectories
+
 
 if __name__ == "__main__":
     rospy.init_node('run_hand_poses')
@@ -37,8 +40,8 @@ if __name__ == "__main__":
     for pose in srt._hand_trajectories:
         if 'open' == pose:
             continue
-        raw_input("About to go to pose {}. Press [RETURN] to execute...".format(pose))
+        input("About to go to pose {}. Press [RETURN] to execute...".format(pose))
         srt.run_trajectory('hand', pose)
-        raw_input("Press [RETURN] to go back to open pose")
+        input("Press [RETURN] to go back to open pose")
         srt.run_trajectory('hand', 'open')
     rospy.loginfo("All poses have been tested. Exiting.")
