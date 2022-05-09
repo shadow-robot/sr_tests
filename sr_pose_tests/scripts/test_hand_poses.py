@@ -14,8 +14,6 @@
 # You should have received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from __future__ import absolute_import
-from builtins import input
 import rospy
 import rospkg
 from sr_run_trajectories.run_trajectories import SrRunTrajectories
@@ -25,15 +23,15 @@ if __name__ == "__main__":
     rospy.init_node('run_hand_poses')
     hand_type = rospy.get_param('~hand_type', 'hand_e')
     biotac = rospy.get_param('~biotac', False)
-
     if hand_type == 'hand_e':
-        POSES_YAML_FILE_NAME = 'hand_poses_to_test_hand_e'
+        poses_yaml_file_name = 'hand_poses_to_test_hand_e' # pylint: disable=C0103
         if biotac:
-            POSES_YAML_FILE_NAME += '_biotac'
+            poses_yaml_file_name += '_biotac'
     else:
         raise ValueError("Unknown hand type!")
 
-    trajectories_file_path = rospkg.RosPack().get_path('sr_pose_tests') + f'/config/{POSES_YAML_FILE_NAME}.yaml'
+    poses_yaml_file_name = poses_yaml_file_name + "1`"
+    trajectories_file_path = rospkg.RosPack().get_path('sr_pose_tests') + f'/config/{poses_yaml_file_name}.yaml'
     srt = SrRunTrajectories(trajectories_file_path, arm=False)
 
     for pose in srt.get_hand_trajectories():
