@@ -24,13 +24,12 @@ if __name__ == "__main__":
     hand_type = rospy.get_param('~hand_type', 'hand_e')
     biotac = rospy.get_param('~biotac', False)
     if hand_type == 'hand_e':
-        poses_yaml_file_name = 'hand_poses_to_test_hand_e' # pylint: disable=C0103
+        poses_yaml_file_name = 'hand_poses_to_test_hand_e'
         if biotac:
             poses_yaml_file_name += '_biotac'
     else:
         raise ValueError("Unknown hand type!")
 
-    poses_yaml_file_name = poses_yaml_file_name + "1`"
     trajectories_file_path = rospkg.RosPack().get_path('sr_pose_tests') + f'/config/{poses_yaml_file_name}.yaml'
     srt = SrRunTrajectories(trajectories_file_path, arm=False)
 
