@@ -7,5 +7,5 @@ Style|[<img src="https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNye
 Code Coverage|[<img src="https://codebuild.eu-west-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMm0vcWt4Vms2N080eW0vVmpDNVVrR21PeFdpM01JdlJOOWlCRUFyTnQxZityT1I5VytzTkcxNTZUZmlnTGROY2ZWOEk0ZXo3Wjl3ZkVKdFRWcGdTY1NnPSIsIml2UGFyYW1ldGVyU3BlYyI6ImQ2dGx2NzA2ZXJQdGlPZ3UiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=noetic-devel"/>](https://eu-west-2.console.aws.amazon.com/codesuite/codebuild/projects/auto_sr_tests_noetic-devel_code_coverage/)
 
 # sr_tests
-Repository containing tests of the Shadow Robot Hand
+Repository containing tests of the Shadow Robot Hand.
 
